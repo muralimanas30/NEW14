@@ -56,11 +56,43 @@ function hello(){
                 ques_text_context.textContent="New Here? Join the community by Signing up";
             }
     }
-    else{
-        console.log("START FOR 430");
+    else if(screen.width<380){
+        console.log("START FOR 380");
     
         
             if(switch_button_click_count%2==0)
+            {
+                ques_frame.style.animation =  "login-to-signup-mobile ease-in-out 0.6s forwards 1";
+                login_frame.style.animation= "login-frame-animation-mobile-1 0.6s ease-in 1 forwards";
+                signup_frame.style.animation="register-frame-animation-mobile-1 0.6s 1 forwards ease-out";
+                switch_button.textContent = "LOGIN";
+                body.style.backgroundPosition="0% 100%";
+                ques_text_context.textContent="Welcome back soldier! Good to have you back";
+                ques_frame.style.scale=1;
+                login_frame.style.scale=0.7;
+                signup_frame.style.scale=0.7;
+                switch_button.style.scale=0.8;
+
+            }
+             else{
+                 login_frame.style.animation= "login-frame-animation-mobile-2 0.6s ease-out 1 forwards"
+                 signup_frame.style.animation="register-frame-animation-mobile-2 0.6s 1 forwards ease-out";
+                 switch_button.textContent = "SIGN UP";
+                 ques_frame.style.animation =  "signup-to-login-mobile ease-in-out 0.6s forwards 1";
+
+                 body.style.backgroundPosition="70% 100%";
+                 ques_text_context.textContent="New Here? Join the community by Signing up";
+                 ques_frame.style.scale=1;
+                 login_frame.style.scale=0.7;
+                 switch_button.style.scale=0.85;
+                 signup_frame.style.scale=0.7;
+                }
+    
+     
+    
+    }
+    else{
+        if(switch_button_click_count%2==0)
             {
                 ques_frame.style.animation =  "login-to-signup-mobile ease-in-out 0.6s forwards 1";
                 login_frame.style.animation= "login-frame-animation-mobile-1 0.6s ease-in 1 forwards";
@@ -79,10 +111,7 @@ function hello(){
 
                  body.style.backgroundPosition="70% 100%";
                  ques_text_context.textContent="New Here? Join the community by Signing up";
-             }
-    
-     
-    
+                }
     }
     
 
